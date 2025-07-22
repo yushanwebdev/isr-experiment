@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,18 +13,30 @@ export default function Home() {
           height={38}
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+        <h1 className="text-3xl font-bold">ISR Experiment</h1>
+        <div className="flex flex-col gap-4">
+          <h2 className="text-xl font-semibold">Test Pages:</h2>
+          <div className="flex gap-4 flex-col sm:flex-row flex-wrap">
+            <Link 
+              href="/isr-test" 
+              className="rounded-lg bg-blue-500 text-white px-6 py-3 font-medium hover:bg-blue-600 transition-colors text-center"
+            >
+              ISR Test (GitHub API)
+            </Link>
+            <Link 
+              href="/isr-custom" 
+              className="rounded-lg bg-green-500 text-white px-6 py-3 font-medium hover:bg-green-600 transition-colors text-center"
+            >
+              ISR Test (Custom API)
+            </Link>
+            <Link 
+              href="/on-demand" 
+              className="rounded-lg bg-purple-500 text-white px-6 py-3 font-medium hover:bg-purple-600 transition-colors text-center"
+            >
+              On-Demand Revalidation
+            </Link>
+          </div>
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
